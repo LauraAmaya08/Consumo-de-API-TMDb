@@ -1,12 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     text-align: center;
-    padding: 30px;
+    background-color: #e6e6e6;
+
+}
+
+header{
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    letter-spacing: 3px;
 }
 
 .contenedor{
     font-family: sans-serif;
-    padding: 20px;
+    width: 100vw;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 8%;
+    margin-top: 2%;
 }
 
+
+
+.pelicula {
+    width: 100%; 
+    max-width: 200px; 
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.pelicula:hover {
+    transform: scale(1.05);
+}
+
+
+.poster {
+    width: 100%;
+}
+
+.titulo {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.paginacion{
+    position: fixed;
+    bottom: 0;
+    background-color:rgba(2, 2, 2, 0.911);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vw;
+    gap: 100px;
+    padding: 10px;
+}
+
+.paginacion button {
+    cursor: pointer;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    background-color: rgba(38, 38, 38, 0.933);
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    margin: 10px;
+    font-size: 1em; 
+    line-height: 50px;
+    transition: background-color 0.3s; 
+}
+
+.paginacion button:hover {
+    background-color: rgba(60, 60, 60, 0.933); 
+}

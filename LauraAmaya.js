@@ -1,7 +1,7 @@
 const cargarPeliculas = async () => {
   try {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=d435b5b199e3a5b016833a4f2075b774"
+      `https://api.themoviedb.org/3/movie/popular?api_key=d435b5b199e3a5b016833a4f2075b774&page=${pagina}`
     );
     if (response.ok) {
       const datos = await response.json();
@@ -22,4 +22,25 @@ const cargarPeliculas = async () => {
   }
 };
 
-cargarPeliculas();
+let pagina = 1
+const botonAnte = document.getElementById("anterior")
+const botonSig = document.getElementById("siguiente")
+
+botonSig.addEventListener("click",()=>{
+  if (pagina < 1000){
+    pagina+= 1
+    cargarPeliculas(pagina)
+  }
+})
+
+botonAnte.addEventListener("click",()=>{
+  if (pagina > 1){
+    pagina -= 1
+    cargarPeliculas(pagina)
+  }
+})
+
+
+cargarPeliculas(pagina);
+
+
